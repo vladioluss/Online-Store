@@ -1,0 +1,7 @@
+
+                Sql: select `roles`.*, `model_has_roles`.`model_id` as `pivot_model_id`, `model_has_roles`.`role_id` as `pivot_role_id`, `model_has_roles`.`model_type` as `pivot_model_type` from `roles` inner join `model_has_roles` on `roles`.`id` = `model_has_roles`.`role_id` where `model_has_roles`.`model_id` = ? and `model_has_roles`.`model_type` = ?
+                Bindings: 5, App\Models\User
+                Time: 0.67
+                File: C:\Projects\appback\vendor\laravel\framework\src\Illuminate\Events\Dispatcher.php
+                Line: 404
+            
