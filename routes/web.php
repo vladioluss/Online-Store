@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\GoodsController;
+use App\Http\Controllers\cartController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -29,3 +30,5 @@ Route::middleware(['role:admin'])->prefix('adm')->group(function () {
     Route::resource('category', CategoryController::class);
     Route::resource('goods', GoodsController::class);
 });
+
+Route::resource('cart', CartController::class);

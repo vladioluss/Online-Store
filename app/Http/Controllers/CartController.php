@@ -4,18 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\cart;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
-class cartController extends Controller {
+class CartController extends Controller {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index() {
-        $cart = cart::get();
-        dd($cart);
+        $cart = Cart::all();
+        //dd($cart);
 
-        return view('admin.goods.index', [
+        return view('cart.index', [
             'cart' => $cart
         ]);
     }
@@ -24,7 +25,7 @@ class cartController extends Controller {
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function store(Request $request)
     {
@@ -35,7 +36,7 @@ class cartController extends Controller {
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function show($id)
     {
@@ -47,7 +48,7 @@ class cartController extends Controller {
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function update(Request $request, $id)
     {
@@ -58,7 +59,7 @@ class cartController extends Controller {
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function destroy($id)
     {

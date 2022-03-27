@@ -44,7 +44,8 @@ class AppServiceProvider extends ServiceProvider
         });*/
 
         Paginator::defaultView('view-name');
-
         Paginator::defaultSimpleView('view-name');
+
+
     }
 }

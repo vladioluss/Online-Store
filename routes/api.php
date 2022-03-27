@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\GoodsController;
+use App\Http\Controllers\foxController;
 use App\Http\Resources\GoodsResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,4 +20,4 @@ use Illuminate\Support\Facades\Route;
     return $request->user();
 });*/
 
-
+Route::get('fox/{id}', [foxController::class, 'fox']);
