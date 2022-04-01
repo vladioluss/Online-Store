@@ -19,9 +19,9 @@ class homeController extends Controller {
      * @return Application|Factory|View|Response
      */
     public function index() {
-        $goodsCount = goods::all()->count();
-        $categoryCount = Category::all()->count();
-        $regUserCount = User::all()->count(); //всего зареганных юзеров
+        $goodsCount = goods::get('id')->count();
+        $categoryCount = Category::get('id')->count();
+        $regUserCount = User::get('id')->count(); //всего зареганных юзеров
 
         return view('admin.home.index', [
             'goodsCount' => $goodsCount,

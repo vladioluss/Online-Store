@@ -67,4 +67,12 @@ class CartController extends Controller {
     {
         //
     }
+
+    public function incrm() {
+        return ;
+    }
+
+    public function deincrm() {
+        return;
+    }
 }

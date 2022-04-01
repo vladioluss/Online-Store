@@ -72,7 +72,6 @@ class GoodsController extends Controller {
      */
     public function show(goods $good) {
         $goodProduct = goods::findOrFail($good->id);
-        //dump($goodProduct);
 
         return view('admin.goods.show', [
             'goodProduct' => $goodProduct

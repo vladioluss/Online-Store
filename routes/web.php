@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\GoodsController;
-use App\Http\Controllers\cartController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -17,16 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $goods = [];
-    return view('welcome', [
-        'goods' => $goods
-    ]);
-});
+Route::get('/',[\App\Http\Controllers\GoodsController::class, 'index']);
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\GoodsController::class, 'index'])->name('home');
+Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware(['role:admin'])->prefix('adm')->group(function () {
     Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('adminHome');
