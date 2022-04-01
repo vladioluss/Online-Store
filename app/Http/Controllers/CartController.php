@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\cart;
+use App\Models\goods;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -13,8 +14,7 @@ class CartController extends Controller {
      * @return Response
      */
     public function index() {
-        $cart = Cart::all();
-        //dd($cart);
+        $cart = Cart::get();
 
         return view('cart.index', [
             'cart' => $cart
@@ -25,11 +25,13 @@ class CartController extends Controller {
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function store(Request $request)
     {
-        //
+        $cart = goods::findOrFail($request->id)->get();
+        //$countElem = goods::findOrFail($request->id)->count();
+
     }
 
     /**

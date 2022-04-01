@@ -18,7 +18,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $goods = [];
+    return view('welcome', [
+        'goods' => $goods
+    ]);
 });
 
 Auth::routes();
@@ -31,4 +34,7 @@ Route::middleware(['role:admin'])->prefix('adm')->group(function () {
     Route::resource('goods', GoodsController::class);
 });
 
-Route::resource('cart', CartController::class);
+//Route::resource('cart', CartController::class);
+
+/*Route::get('cart', 'CartController@index');
+Route::post('cart/add/{productId}', 'CartController@store');*/
