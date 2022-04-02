@@ -5,10 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class goods extends Model {
+class goodsImage extends Model
+{
     use HasFactory;
-
-    public function imgs() {
-        return $this->hasMany('App\goodsImage');
-    }
 }

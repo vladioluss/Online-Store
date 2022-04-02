@@ -9,7 +9,7 @@
             <!-- Single Catagory -->
             @foreach($goods as $goodsProduct)
                 <div class="single-products-catagory clearfix">
-                    <a href="">
+                    <a href="{{'goods/'.$goodsProduct->id}}">
                         <img src="{{$goodsProduct->img}}" alt="">
                         <!-- Hover Content -->
                         <div class="hover-content">
