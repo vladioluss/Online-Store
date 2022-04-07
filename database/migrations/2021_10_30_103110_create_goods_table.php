@@ -17,7 +17,7 @@ class CreateGoodsTable extends Migration
             $table->string('name');
             $table->string('description');
             $table->float('price');
-            $table->string('img');
+            $table->foreignId('img_id')->index();
             $table->foreignId('category_id')->constrained();
             $table->string('size');
             $table->string('additional_pr');

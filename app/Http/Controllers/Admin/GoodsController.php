@@ -49,15 +49,15 @@ class GoodsController extends Controller {
         $validated = $request->validated();
         $newGoods->name = $request->name;
 
-        if ($request->isMethod('post') && $request->file('userfile')) {
+        /*if ($request->isMethod('post') && $request->file('userfile')) {
             $file = $request->file('userfile');
             $upload_folder = 'public/folder';
             $filename = $file->getClientOriginalName();
 
-            $newGoods->img = Storage::putFileAs($upload_folder, $file, $filename);
+            $newGoods->img_id = Storage::putFileAs($upload_folder, $file, $filename);
         } else {
-            $newGoods->img = '/public/folder/no-photo.png';
-        }
+            $newGoods->img_id = '/public/folder/no-photo.png';
+        }*/
 
         $newGoods->save();
 

@@ -9,8 +9,15 @@
             <!-- Single Catagory -->
             @foreach($goods as $goodsProduct)
                 <div class="single-products-catagory clearfix">
-                    <a href="{{'goods/'.$goodsProduct->id}}">
-                        <img src="{{$goodsProduct->img}}" alt="">
+                    <a href="{{'/goods/'.$goodsProduct->category_id.'/'.$goodsProduct->id}}">
+                        @php
+                            //dd(count($goodsProduct->imgs));
+                            $imgs = '';
+                            if (count($goodsProduct->imgs) > 0) {
+                                $imgs = $goodsProduct->imgs[0]['img'];
+                            } else $imgs = '/img/no-photo.png';
+                        @endphp
+                        <img src="{{$imgs}}" alt="">
                         <!-- Hover Content -->
                         <div class="hover-content">
                             <div class="line"></div>

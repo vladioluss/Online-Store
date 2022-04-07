@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\goods;
+use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Support\Renderable;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
 
@@ -14,7 +17,7 @@ class GoodsController extends Controller {
      * @return void
      */
     public function __construct() {
-        $this->middleware('auth');
+        //$this->middleware('auth'); //проверка на авторизацию, роль, права
     }
 
     /**
@@ -31,20 +34,19 @@ class GoodsController extends Controller {
     }
 
     /**
-     * @param goods $id
-     * @return mixed
+     * @param $category
+     * @param $goods_id
+     * @return Application|Factory|View
      */
-    public function show(goods $id) {
-        $goodsProduct = goods::findOrFail($id)->get();
-        dd($goodsProduct);
+    public function show($category, $goods_id) {
+        $goodsProduct = goods::join('categories', 'categories.id', '=', 'goods.category_id')
+            ->where('categories.name', $category)
+            ->where('goods.id', $goods_id)
+            ->get('goods.*', 'categories.name');
+            //->dd();
 
-        return view('goods.show');
-    }
-
-    public function test(Request $request) {
-        return json_encode(
-            $request->all(),
-            JSON_UNESCAPED_UNICODE
-        );
+        return view('goods.show', [
+            'goodsProduct' => $goodsProduct
+        ]);
     }
 }

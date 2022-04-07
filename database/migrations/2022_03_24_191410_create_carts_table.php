@@ -4,19 +4,24 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCartsTable extends Migration
-{
+class CreateCartsTable extends Migration {
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::create('carts', function (Blueprint $table) {
+    public function up() {
+        /*Schema::create('carts', function (Blueprint $table) {
             $table->id();
+            $table->foreign('goods_id')
+                ->references('id')
+                ->on('goods')
+                ->onDelete('cascade');
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users');
             $table->timestamps();
-        });
+        });*/
     }
 
     /**
@@ -24,8 +29,7 @@ class CreateCartsTable extends Migration
      *
      * @return void
      */
-    public function down()
-    {
+    public function down() {
         Schema::dropIfExists('carts');
     }
 }

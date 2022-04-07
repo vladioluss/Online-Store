@@ -176,7 +176,9 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Spatie\Permission\PermissionServiceProvider::class,
-        Barryvdh\Elfinder\ElfinderServiceProvider::class
+        Barryvdh\Elfinder\ElfinderServiceProvider::class,
+
+        Spatie\Permission\PermissionServiceProvider::class,
     ],
 
     /*

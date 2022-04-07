@@ -11,11 +11,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Favicon  -->
-    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="icon" href="/img/core-img/favicon.ico">
 
     <!-- Core Style CSS -->
-    <link rel="stylesheet" href="css/core-style.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/core-style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <title>{{ config('app.name', 'Laravel') }}</title>
 </head>
 
@@ -31,7 +31,7 @@
                 <div class="search-content">
                     <form action="#" method="get">
                         <input type="search" name="search" id="search" placeholder="Type your keyword...">
-                        <button type="submit"><img src="img/core-img/search.png" alt=""></button>
+                        <button type="submit"><img src="/img/core-img/search.png" alt=""></button>
                     </form>
                 </div>
             </div>
@@ -47,7 +47,7 @@
     <div class="mobile-nav">
         <!-- Navbar Brand -->
         <div class="amado-navbar-brand">
-            <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
+            <a href="index.html"><img src="/img/core-img/logo.png" alt=""></a>
         </div>
         <!-- Navbar Toggler -->
         <div class="amado-navbar-toggler">
@@ -63,16 +63,13 @@
         </div>
         <!-- Logo -->
         <div class="logo">
-            <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
+            <a href="index.html"><img src="/img/core-img/logo.png" alt=""></a>
         </div>
         <!-- Amado Nav -->
         <nav class="amado-nav">
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="product-details.html">Product</a></li>
-                <li class=""><a href="cart.html">Cart</a></li>
-                <li><a href="checkout.html">Checkout</a></li>
+                <li><a href="/">Главная</a></li>
+                <li><a href="">Магазин</a></li>
             </ul>
         </nav>
         <!-- Button Group -->
@@ -87,9 +84,8 @@
         </div>
         <!-- Cart Menu -->
         <div class="cart-fav-search mb-100">
-            <a href="cart.html" class="cart-nav"><img src="img/core-img/cart.png" alt=""> Cart <span>(0)</span></a>
-            <a href="#" class="fav-nav"><img src="img/core-img/favorites.png" alt=""> Favourite</a>
-            <a href="#" class="search-nav"><img src="img/core-img/search.png" alt=""> Search</a>
+            <a href="cart.html" class="cart-nav"><img src="/img/core-img/cart.png" alt="">Корзина<span>(0)</span></a>
+            <a href="#" class="search-nav"><img src="/img/core-img/search.png" alt="">Поиск</a>
         </div>
         <!-- Social Button -->
         <div class="social-info d-flex justify-content-between">
@@ -142,7 +138,7 @@
                     <div class="single_widget_area">
                         <!-- Logo -->
                         <div class="footer-logo mr-50">
-                            <a href="index.html"><img src="img/core-img/logo2.png" alt=""></a>
+                            <a href="index.html"><img src="/img/core-img/logo2.png" alt=""></a>
                         </div>
                         <!-- Copywrite Text -->
                         <p class="copywrite"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
@@ -160,19 +156,10 @@
                                 <div class="collapse navbar-collapse" id="footerNavContent">
                                     <ul class="navbar-nav ml-auto">
                                         <li class="nav-item active">
-                                            <a class="nav-link" href="index.html">Home</a>
+                                            <a class="nav-link" href="/">Главная</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="shop.html">Shop</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="product-details.html">Product</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="cart.html">Cart</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="checkout.html">Checkout</a>
+                                            <a class="nav-link" href="/goods">Магазин</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -186,14 +173,14 @@
     <!-- ##### Footer Area End ##### -->
 
     <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="/js/jquery/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
-    <script src="js/popper.min.js"></script>
+    <script src="/js/popper.min.js"></script>
     <!-- Bootstrap js -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
     <!-- Plugins js -->
-    <script src="js/plugins.js"></script>
+    <script src="/js/plugins.js"></script>
     <!-- Active js -->
-    <script src="js/active.js"></script>
+    <script src="/js/active.js"></script>
 </body>
 </html>

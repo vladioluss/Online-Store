@@ -27,6 +27,12 @@
                                 </thead>
                                 <tbody>
                                 @foreach($goods as $goodsProduct)
+                                    {{--@php
+                                    $imgs = '';
+                                    if (count($goodsProduct->imgs) > 0) {
+                                        $imgs = $goodsProduct->imgs[0]['img'];
+                                    } else $imgs = 'no-photo.png';
+                                    @endphp--}}
                                     <tr>
                                         <td>{{$goodsProduct->id}}</td>
                                         <td>

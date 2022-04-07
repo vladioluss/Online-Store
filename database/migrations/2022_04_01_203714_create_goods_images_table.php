@@ -11,10 +11,16 @@ class CreateGoodsImagesTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
+    public function up() {
         Schema::create('goods_images', function (Blueprint $table) {
             $table->id();
+            $table->string('img');
+            $table->bigInteger('goods_id')
+                ->unsigned();
+            $table->foreign('goods_id')
+                ->references('id')
+                ->on('goods')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -24,8 +30,7 @@ class CreateGoodsImagesTable extends Migration
      *
      * @return void
      */
-    public function down()
-    {
+    public function down() {
         Schema::dropIfExists('goods_images');
     }
 }

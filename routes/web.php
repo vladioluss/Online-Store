@@ -16,11 +16,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+///////ДЛЯ ТЕСТОВ
+Route::get('/test',[\App\Http\Controllers\GoodsController::class, 'getAllImgs']);
+///////
+
 Route::get('/',[\App\Http\Controllers\GoodsController::class, 'index']);
-Route::get('goods/{id}', [\App\Http\Controllers\GoodsController::class, 'show']);
-
-
-Route::get('/test',[\App\Http\Controllers\GoodsController::class, 'test']);
+Route::get('/goods/{category}/{goods_id}', [\App\Http\Controllers\GoodsController::class, 'show']);
 
 Auth::routes();
 
@@ -36,3 +37,5 @@ Route::middleware(['role:admin'])->prefix('adm')->group(function () {
 
 /*Route::get('cart', 'CartController@index');
 Route::post('cart/add/{productId}', 'CartController@store');*/
+
+//php artisan permission:create-role admin
