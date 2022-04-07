@@ -12,10 +12,9 @@
                 <div class="col-12">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb mt-50">
-                            <li class="breadcrumb-item"><a href="#">Главная</a></li>
-                            <li class="breadcrumb-item"><a href="#">Фурнитура</a></li>
-                            <li class="breadcrumb-item"><a href="#">Chairs</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">white modern chair</li>
+                            <li class="breadcrumb-item"><a href="/">Главная</a></li>
+                            <li class="breadcrumb-item"><a href="/goods/{{$categoryProduct[0]->name}}">{{$categoryProduct[0]->name}}</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">{{$goodsProduct[0]->name}}</li>
                         </ol>
                     </nav>
                 </div>
@@ -26,36 +25,21 @@
                     <div class="single_product_thumb">
                         <div id="product_details_slider" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
-                                <li class="active" data-target="#product_details_slider" data-slide-to="0" style="background-image: url(/img/product-img/pro-big-1.jpg);">
-                                </li>
-                                <li data-target="#product_details_slider" data-slide-to="1" style="background-image: url(/img/product-img/pro-big-2.jpg);">
-                                </li>
-                                <li data-target="#product_details_slider" data-slide-to="2" style="background-image: url(/img/product-img/pro-big-3.jpg);">
-                                </li>
-                                <li data-target="#product_details_slider" data-slide-to="3" style="background-image: url(/img/product-img/pro-big-4.jpg);">
+                                <li class="active"
+                                    data-target="#product_details_slider"
+                                    data-slide-to="0"
+                                    style="background-image: url(/img/product-img/pro-big-1.jpg);"
+                                >
                                 </li>
                             </ol>
                             <div class="carousel-inner">
+
                                 <div class="carousel-item active">
                                     <a class="gallery_img" href="/img/product-img/pro-big-1.jpg">
                                         <img class="d-block w-100" src="/img/product-img/pro-big-1.jpg" alt="First slide">
                                     </a>
                                 </div>
-                                <div class="carousel-item">
-                                    <a class="gallery_img" href="/img/product-img/pro-big-2.jpg">
-                                        <img class="d-block w-100" src="/img/product-img/pro-big-2.jpg" alt="Second slide">
-                                    </a>
-                                </div>
-                                <div class="carousel-item">
-                                    <a class="gallery_img" href="/img/product-img/pro-big-3.jpg">
-                                        <img class="d-block w-100" src="/img/product-img/pro-big-3.jpg" alt="Third slide">
-                                    </a>
-                                </div>
-                                <div class="carousel-item">
-                                    <a class="gallery_img" href="/img/product-img/pro-big-4.jpg">
-                                        <img class="d-block w-100" src="/img/product-img/pro-big-4.jpg" alt="Fourth slide">
-                                    </a>
-                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -65,14 +49,14 @@
                         <!-- Product Meta Data -->
                         <div class="product-meta-data">
                             <div class="line"></div>
-                            <p class="product-price">{{$goodsProduct}} Руб</p>
-                            <h2>{{$goodsProduct}}</h2>
+                            <p class="product-price">{{$goodsProduct[0]->price}} Руб</p>
+                            <h2>{{$goodsProduct[0]->name}}</h2>
                             <!-- Avaiable -->
                             <p class="avaibility"><i class="fa fa-circle"></i> In Stock</p>
                         </div>
 
                         <div class="short_overview my-5">
-                            <p>{{$goodsProduct}}</p>
+                            <p>{{$goodsProduct[0]->description}}</p>
                         </div>
 
                         <!-- Add to Cart Form -->

@@ -9,7 +9,7 @@
             <!-- Single Catagory -->
             @foreach($goods as $goodsProduct)
                 <div class="single-products-catagory clearfix">
-                    <a href="{{'/goods/'.$goodsProduct->category_id.'/'.$goodsProduct->id}}">
+                    <a href="{{'/goods/pizza/'.$goods[0]->id}}">
                         @php
                             //dd(count($goodsProduct->imgs));
                             $imgs = '';

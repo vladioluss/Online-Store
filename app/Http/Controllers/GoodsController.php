@@ -9,6 +9,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\DB;
 
 class GoodsController extends Controller {
     /**
@@ -42,11 +43,18 @@ class GoodsController extends Controller {
         $goodsProduct = goods::join('categories', 'categories.id', '=', 'goods.category_id')
             ->where('categories.name', $category)
             ->where('goods.id', $goods_id)
-            ->get('goods.*', 'categories.name');
+            ->get('goods.*');
+            //->dd();
+
+        $categoryProduct = goods::join('categories', 'categories.id', '=', 'goods.category_id')
+            ->where('categories.name', $category)
+            ->where('goods.id', $goods_id)
+            ->get('categories.name');
             //->dd();
 
         return view('goods.show', [
-            'goodsProduct' => $goodsProduct
+            'goodsProduct' => $goodsProduct,
+            'categoryProduct' => $categoryProduct
         ]);
     }
 }
