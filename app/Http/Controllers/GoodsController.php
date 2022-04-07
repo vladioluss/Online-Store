@@ -39,8 +39,8 @@ class GoodsController extends Controller {
      * @param $goods_id
      * @return Application|Factory|View
      */
-    public function show($category, $goods_id) {
-        $goodsProduct = goods::join('categories', 'categories.id', '=', 'goods.category_id')
+    public function show($id) {
+        /*$goodsProduct = goods::join('categories', 'categories.id', '=', 'goods.category_id')
             ->where('categories.name', $category)
             ->where('goods.id', $goods_id)
             ->get('goods.*');
@@ -49,12 +49,14 @@ class GoodsController extends Controller {
         $categoryProduct = goods::join('categories', 'categories.id', '=', 'goods.category_id')
             ->where('categories.name', $category)
             ->where('goods.id', $goods_id)
-            ->get('categories.name');
+            ->get('categories.name');*/
             //->dd();
+
+        $goodsProduct = goods::where('id', $id)->first();
 
         return view('goods.show', [
             'goodsProduct' => $goodsProduct,
-            'categoryProduct' => $categoryProduct
+            //'categoryProduct' => $categoryProduct
         ]);
     }
 }

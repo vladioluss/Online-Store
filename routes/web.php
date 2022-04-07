@@ -21,7 +21,7 @@ Route::get('/test',[\App\Http\Controllers\GoodsController::class, 'getAllImgs'])
 ///////
 
 Route::get('/',[\App\Http\Controllers\GoodsController::class, 'index']);
-Route::get('/goods/{category}/{goods_id}', [\App\Http\Controllers\GoodsController::class, 'show']);
+Route::get('/{category}/{goods_id}', [\App\Http\Controllers\GoodsController::class, 'show'])->name('showGoods');
 
 Auth::routes();
 

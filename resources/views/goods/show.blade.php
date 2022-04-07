@@ -13,8 +13,8 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb mt-50">
                             <li class="breadcrumb-item"><a href="/">Главная</a></li>
-                            <li class="breadcrumb-item"><a href="/goods/{{$categoryProduct[0]->name}}">{{$categoryProduct[0]->name}}</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">{{$goodsProduct[0]->name}}</li>
+                            <li class="breadcrumb-item"><a href="/goods/{{''}}">{{''}}</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">{{''}}</li>
                         </ol>
                     </nav>
                 </div>
@@ -49,14 +49,14 @@
                         <!-- Product Meta Data -->
                         <div class="product-meta-data">
                             <div class="line"></div>
-                            <p class="product-price">{{$goodsProduct[0]->price}} Руб</p>
-                            <h2>{{$goodsProduct[0]->name}}</h2>
+                            <p class="product-price">{{''}} Руб</p>
+                            <h2>{{''}}</h2>
                             <!-- Avaiable -->
                             <p class="avaibility"><i class="fa fa-circle"></i> In Stock</p>
                         </div>
 
                         <div class="short_overview my-5">
-                            <p>{{$goodsProduct[0]->description}}</p>
+                            <p>{{''}}</p>
                         </div>
 
                         <!-- Add to Cart Form -->
